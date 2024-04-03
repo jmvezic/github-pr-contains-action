@@ -154,6 +154,8 @@ function run() {
                 }
                 core.info("Checking lines/files changed");
                 const linesChanged = +core.getInput("linesChanged");
+                core.setOutput("additions", additions);
+                core.setOutput("linesChanged", linesChanged);
                 if (linesChanged && additions != linesChanged) {
                     const this_msg = "You should change exactly " +
                         linesChanged +
